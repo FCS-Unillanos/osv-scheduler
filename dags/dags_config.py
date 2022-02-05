@@ -6,14 +6,15 @@ class Config:
 
     TESTING_URL = "https://google.com"
 
-    REDIS_HOST = f"{os.getenv('REDIS_HOST', '127.0.0.1')}"
-    REDIS_PORT = f"{os.getenv('REDIS_HOST', '6379')}"
+    REDIS_HOST = os.getenv('REDIS_HOST', '127.0.0.1')
+    REDIS_PORT = os.getenv('REDIS_PORT', '6379')
 
-    KAFKA_HOST = f"{os.getenv('KAFKA_HOST', '127.0.0.1')}"
-    KAFKA_PORT = f"{os.getenv('KAFKA_PORT', '9092')}"
+    KAFKA_HOST = os.getenv('KAFKA_HOST', '127.0.0.1')
+    KAFKA_PORT = os.getenv('KAFKA_PORT', '9092')
 
     BOOTSTRAP_SERVERS = [f"{KAFKA_HOST}:{KAFKA_PORT}"]
-    TOPIC_NEWS = "data_bank_topic_news"
+
+    TOPIC_NEWS = os.environ["DEFAULT_TOPIC_NEWS"]
 
     REDIS_CONFIG = {
         "host": REDIS_HOST,
