@@ -14,7 +14,7 @@ class Config:
 
     BOOTSTRAP_SERVERS = [f"{KAFKA_HOST}:{KAFKA_PORT}"]
 
-    TOPIC_NEWS = os.environ["DEFAULT_TOPIC_NEWS"]
+    TOPIC_NEWS = os.environ["DEFAULT_TOPIC"]
 
     REDIS_CONFIG = {
         "host": REDIS_HOST,
