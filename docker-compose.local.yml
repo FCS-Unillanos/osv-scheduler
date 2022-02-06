@@ -62,9 +62,9 @@ services:
     ports:
       - "9092:9092"
     environment:
-      - DEFAULT_TOPIC=default_topic
+      - DEFAULT_TOPIC=${DEFAULT_TOPIC}
       - KAFKA_ZOOKEEPER_CONNECT=${ZOOKEEPER_URL}
-      - KAFKA_ADVERTISED_HOST_NAME=kafka
+      - KAFKA_ADVERTISED_HOST_NAME=${KAFKA_HOST}
       - KAFKA_ADVERTISED_LISTENERS=${KAFKA_LISTENERS}
       - ALLOW_PLAINTEXT_LISTENER=yes
     depends_on:
